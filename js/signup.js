@@ -1,6 +1,11 @@
 
 $('#signup_button').on('click', function(){
   // cargar los valores de password, email, name, age
+  let email = $("#email").val()
+  let password = $("#password").val()
+  let name = $("#name").val()
+  let age = $("#age").val()
+  
   json_to_send = {
     "password" : password,
     "email": email,
@@ -12,7 +17,7 @@ $('#signup_button').on('click', function(){
 
   $.ajax({
     url: 'http://localhost:3000/users',
-    // url: 'https://tuapp.herokuapp.com/users',
+    // url: 'https://examen-final-web-817562.herokuapp.com/users',
     headers: {
         'Content-Type':'application/json'
     },

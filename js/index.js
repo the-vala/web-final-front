@@ -12,7 +12,7 @@ $('#login_button').on('click', function(){
   console.log(json_to_send)
   $.ajax({
     url: 'http://localhost:3000/login',
-    // url: 'https://tuapp.herokuapp.com/users/login',
+    // url: 'https://examen-final-web-817562.herokuapp.com/users/login',
     headers: {
         'Content-Type':'application/json'
     },

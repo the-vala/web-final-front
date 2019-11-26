@@ -9,7 +9,7 @@ var todos = document.querySelectorAll("input[type=checkbox]");
 function loadTodos() {
   $.ajax({
     url: 'http://localhost:3000/todos',
-    // url: 'https://tuapp.herokuapp.com/todos',
+    // url: 'https://examen-final-web-817562.herokuapp.com/todos',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -18,13 +18,13 @@ function loadTodos() {
     dataType: 'json',
     success: function(data){
       console.log(data)
+      let newHTML = ''
 
       for( let i = 0; i < data.length; i++) {
         // aqui va su código para agregar los elementos de la lista
         console.log(data[i].description)
-        // algo asi:
-        // addTodo(data[i]._id, data[i].description, data[i].completed)
-        // no tienen que usar la funcion de addTodo, es un ejemplo
+        addTodo(data[i]._id, data[i].description, data[i].completed)
+        
       }
     },
     error: function(error_msg) {
@@ -54,7 +54,7 @@ input.addEventListener('keypress', function (event) {
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
       url: 'http://localhost:3000/todos',
-      // url: 'https://tuapp.herokuapp.com/todos',
+      // url: 'https://examen-final-web-817562.herokuapp.com/todos',
       headers: {
           'Content-Type':'application/json',
           'Authorization': 'Bearer ' + token
@@ -77,5 +77,17 @@ input.addEventListener('keypress', function (event) {
 
 
 function addTodo(id, todoText, completed) {
+  newHTML = `
+        <li><input type="checkbox" name="todo" value="
+        ${id}
+        "`
+        if (completed) {
+          newHTML += ` checked`
+        }
+        newHTML += `><span>
+            ${todoText}
+        </span></li>
+        `
   
+    $('#todo-list').append(newHTML)
 }
