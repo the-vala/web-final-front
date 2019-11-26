@@ -21,7 +21,6 @@ function loadTodos() {
       let newHTML = ''
 
       for( let i = 0; i < data.length; i++) {
-        // aqui va su código para agregar los elementos de la lista
         console.log(data[i].description)
         addTodo(data[i]._id, data[i].description, data[i].completed)
         
@@ -34,15 +33,6 @@ function loadTodos() {
 }
 
 loadTodos()
-
-
-// o con jquery
-// $('input[name=newitem]').keypress(function(event){
-//     var keycode = (event.keyCode ? event.keyCode : event.which);
-//     if(keycode == '13'){
-//         $.ajax({})
-//     }
-// });
 
 var input = document.querySelector("input[name=newitem]");
 
@@ -64,7 +54,7 @@ input.addEventListener('keypress', function (event) {
       data: json_to_send,
       success: function(data){
         console.log(data)
-        // agregar código aqui para poner los datos del todolist en el el html
+        addTodo(data._id, data.description, data.completed)
         
       },
       error: function(error_msg) {
