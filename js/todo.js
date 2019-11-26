@@ -81,3 +81,8 @@ function addTodo(id, todoText, completed) {
   
     $('#todo-list').append(newHTML)
 }
+
+$('#logout_button').on('click', function(){
+  localStorage.removeItem('token')
+  window.location = './index.html'
+})
