@@ -43,8 +43,8 @@ input.addEventListener('keypress', function (event) {
     };
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
-      url: 'http://localhost:3000/todos',
-      // url: 'https://examen-final-web-817562.herokuapp.com/todos',
+      // url: 'http://localhost:3000/todos',
+      url: 'https://examen-final-web-817562.herokuapp.com/todos',
       headers: {
           'Content-Type':'application/json',
           'Authorization': 'Bearer ' + token
