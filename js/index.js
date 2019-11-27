@@ -11,8 +11,8 @@ $('#login_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send)
   console.log(json_to_send)
   $.ajax({
-    url: 'http://localhost:3000/login',
-    // url: 'https://examen-final-web-817562.herokuapp.com/users/login',
+    // url: 'http://localhost:3000/login',
+    url: 'https://examen-final-web-817562.herokuapp.com/users/login',
     headers: {
         'Content-Type':'application/json'
     },

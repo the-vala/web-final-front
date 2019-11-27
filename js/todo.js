@@ -8,8 +8,8 @@ var todos = document.querySelectorAll("input[type=checkbox]");
 
 function loadTodos() {
   $.ajax({
-    url: 'http://localhost:3000/todos',
-    // url: 'https://examen-final-web-817562.herokuapp.com/todos',
+    // url: 'http://localhost:3000/todos',
+    url: 'https://examen-final-web-817562.herokuapp.com/todos',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
